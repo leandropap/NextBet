@@ -1,12 +1,16 @@
+import NavBar from "./NavBar"
+
 export default function Footer() {
+
+    let props = [{ text: "Estadisticas", link: "stats" },
+    { text: "Como empezar", link: "start" },
+    { text: "Preguntas frecuntes", link: "faq" },
+    { text: "Terminos y condiciones", link: "legal" },
+    { text: "Politicas de privacidad", link: "privacy" }]
+
     return (
         <>
-            <a>Estadisticas</a>
-            <a>Como empezar</a>
-            <a>Preguntas frecuentes</a>
-            <a>Juego Responsable</a>
-            <a>Terminos y condiciones</a>
-            <a>Politica de privacidad</a>
+            <NavBar props={props} />
             <hr />
             <a>Twitter</a>
             <a>Instagram</a>
