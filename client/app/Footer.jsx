@@ -9,7 +9,7 @@ export default function Footer() {
     { text: "Politicas de privacidad", link: "privacy" }]
 
     return (
-        <>
+        <footer>
             <NavBar props={props} />
             <div class="flex justify-center py-2">
                 <a class="px-5">Twitter</a>
@@ -23,6 +23,6 @@ export default function Footer() {
                 <p class="text-center py-2 px-20"> La AGENCIA DE ACCESO A LA INFORMACIÓN PÚBLICA, en su carácter de Órgano de Control de la Ley N 25.326, tiene la atribución de atender las denuncias y reclamos que interpongan quienes resulten afectados en sus derechos por incumplimiento de las normas vigentes en materia de protección de datos personales.</p>
                 <p class="py-5 text-xl"> EL JUEGO COMPULSIVO ES PERJUDICIAL PARA VOS Y TU FAMILIA</p>
             </div>
-        </>
+        </footer>
     )
 }

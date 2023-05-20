@@ -8,9 +8,9 @@ export default function Header() {
     { text: "Iniciar sesion", link: "login" }]
 
     return (
-        <>
+        <header>
             <span>Logo</span>
             <NavBar props={links} />
-        </>
+        </header>
     );
 }
