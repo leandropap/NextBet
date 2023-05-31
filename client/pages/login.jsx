@@ -1,7 +1,7 @@
 import RootLayout from "@/app/layout"
-import { useEffect, useState } from "react"
+import { useState, useEffect } from "react"
 
-export default function Match(props) {
+export default function Login(props) {
     const [isMounted, setMounted] = useState(false)
 
     useEffect(() => {
@@ -9,12 +9,12 @@ export default function Match(props) {
     }, [])
 
     return (
-        <main>
+        <>
             {isMounted ? <RootLayout>
                 <h1>Manchester City - Real Madrid</h1>
 
             </RootLayout>
                 : null}
-        </main>
+        </>
     )
 }

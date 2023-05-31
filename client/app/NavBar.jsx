@@ -1,13 +1,13 @@
+import Link from "next/link"
+
 export default function NavBar(props) {
-
     return (
-
-        <div class="flex justify-evenly">
+        <div className="flex justify-evenly">
             {props.props.map(el => {
                 return (
-                    <a href={el.link} class="hover:bg-blue-500 hover:rounded-lg px-10">
+                    <Link href={el.link} className="hover:bg-blue-500 hover:rounded-lg px-10" key={el.text}>
                         {el.text}
-                    </a>
+                    </Link>
                 )
             })}
         </div>

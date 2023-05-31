@@ -1,10 +1,9 @@
 export default function Title(props) {
-    console.log(props)
 
     return (
-        <>
-            <h1 class="text text-2xl ml-10">{props.text}</h1>
+        <div className="ml-5 pb-2">
+            <h1 className="text text-2xl pb-1">{props.text}</h1>
             <hr />
-        </>
+        </div>
     )
 }
