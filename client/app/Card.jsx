@@ -8,14 +8,14 @@ export default function Card(props) {
                     <div className="flex flex-row -my-5">
                         <div className="flex flex-col px-5">
                             <h1>Manchester City</h1>
-                            <img src="https://i.imgur.com/BeclwOR.png" width="100px" className="pt-3" />
+                            <img src="https://i.imgur.com/VRfdWvH.png" width="100px" className="pt-3" />
                             {
                                 props.displayOn ? <h1 className="flex justify-center pt-3 text text-xl">4</h1> : null
                             }
                         </div>
                         <div className="flex flex-col px-5">
                             <h1>Real Madrid</h1>
-                            <img src="https://i.imgur.com/kE2SLbC.png" width="80px" className="pt-3 " />
+                            <img src="https://i.imgur.com/xelhFwH.png" width="120px" className="pt-3 " />
                             {
                                 props.displayOn ? <h1 className="flex justify-center pt-3 text text-xl">0</h1> : null
                             }

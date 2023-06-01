@@ -2,19 +2,14 @@ import RootLayout from "@/app/layout"
 import { useState, useEffect } from "react"
 
 export default function Login(props) {
-    const [isMounted, setMounted] = useState(false)
-
-    useEffect(() => {
-        setMounted(true)
-    }, [])
 
     return (
         <>
-            {isMounted ? <RootLayout>
-                <h1>Manchester City - Real Madrid</h1>
-
+            <RootLayout>
+                <h1>Manchester City 4 - 0 Real Madrid</h1>
+                <h1>Goles</h1>
             </RootLayout>
-                : null}
+
         </>
     )
 }
