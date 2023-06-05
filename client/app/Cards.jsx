@@ -1,11 +1,16 @@
 import Card from "./Card"
+import Slider from "./Slider"
 
 export default function Cards(props) {
     return (
-        <section className="flex flex-row">
-            <Card displayOn={props.displayOn} />
-            <Card displayOn={props.displayOn} />
-            <Card displayOn={props.displayOn} />
-        </section>
+        <Slider>
+            <section className="flex flex-row">
+                <Card displayOn={props} />
+                <Card displayOn={props} />
+                <Card displayOn={props} />
+                <Card displayOn={props} />
+                <Card displayOn={props} />
+            </section>
+        </Slider>
     )
 }

@@ -3,6 +3,7 @@ import Footer from './Footer'
 import Sidebar from './Sidebar'
 import Cards from './Cards'
 import Title from './Title'
+import Slider from './Slider'
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
         <Sidebar />
         <div className="flex flex-col">
           <Title text="Ultimos partidos" />
-          <Cards displayOn={true} />
+          <Slider displayOn={true} />
           <br />
           <Title text="Hoy" />
           <Cards />

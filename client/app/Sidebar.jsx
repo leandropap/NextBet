@@ -14,7 +14,7 @@ export default function Sidebar() {
         <div className="flex flex-col py-2 pr-5">
             {ligas.map(el => {
                 return (<Link href={el.link}
-                    className=" hover:bg-blue-500 py-2 px-4 rounded-full mb-2 border border-blue-500 hover:border-white text text-"
+                    className=" hover:bg-green-500 py-2 px-4 rounded-full mb-2 border-4 border-green-500  hover:border-white w-48"
                 >{el.name}</Link>)
             })}
         </div>

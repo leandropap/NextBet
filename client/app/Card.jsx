@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Card(props) {
     return (
-        <section className="border-2 rounded-3xl pt-8 pb-6 px-8 m-2 hover:scale-105">
+        <section className="border-4 border-green-500 rounded-3xl pt-8 pb-6 px-8 m-2 hover:scale-105">
             <Link href="match">
                 <div className="flex flex-col">
                     <div className="flex flex-row -my-5">
@@ -15,7 +15,7 @@ export default function Card(props) {
                         </div>
                         <div className="flex flex-col px-5">
                             <h1>Real Madrid</h1>
-                            <img src="https://i.imgur.com/xelhFwH.png" width="120px" className="pt-3 " />
+                            <img src="https://i.imgur.com/xelhFwH.png" width="100px" className="pt-3 " />
                             {
                                 props.displayOn ? <h1 className="flex justify-center pt-3 text text-xl">0</h1> : null
                             }
