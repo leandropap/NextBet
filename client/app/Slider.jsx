@@ -4,7 +4,7 @@ import Card from "./Card";
 
 export default function Slider(props) {
     const [position, setPosition] = useState(0);
-    const itemWidth = 380;
+    const itemWidth = 350;
 
     const handlePrev = () => {
         setPosition(position - itemWidth)
@@ -15,11 +15,11 @@ export default function Slider(props) {
     }
 
     return (
-        <div className="flex flex-row overflow-hidden z-50">
-            <button onClick={() => handlePrev()} className="text-2xl">
+        <div className="flex flex-row  items-center overflow-hidden">
+            <button onClick={() => handlePrev()} className="text-2xl z-50 bg-black h-56">
                 ◀
             </button>
-            <ul className="flex flex-row transition-transform duration-300 z-0"
+            <ul className="flex flex-row transition-transform duration-300 z-0 -mr-72 overflow-hidden pr-12"
                 style={{ transform: `translateX(${position}px)` }}>
                 {data.map(el => {
                     return (
@@ -29,7 +29,7 @@ export default function Slider(props) {
                     )
                 })}
             </ul>
-            <button onClick={() => handleNext()} className="text-2xl z-50">
+            <button onClick={() => handleNext()} className="text-2xl z-50 bg-black h-56  w-20 -ml-96">
                 ▶
             </button>
         </div>
