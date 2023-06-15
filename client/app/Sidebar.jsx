@@ -11,10 +11,10 @@ export default function Sidebar() {
     { name: "Copa Libertadores", link: "libertadores", img: "" }]
 
     return (
-        <div className="flex flex-col py-2 pr-5">
+        <div className="flex flex-col py-5 ">
             {ligas.map(el => {
-                return (<Link href={el.link}
-                    className=" hover:bg-green-500 py-2 px-4 rounded-full mb-2 border-4 border-green-500  hover:border-white w-48"
+                return (<Link key={el.name} href={el.link}
+                    className=" hover:bg-green-500 py-2 pl-4 rounded-full mb-2 border-4 border-green-500  hover:border-white w-48"
                 >{el.name}</Link>)
             })}
         </div>

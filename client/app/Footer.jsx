@@ -9,7 +9,7 @@ export default function Footer() {
     { text: "Privacidad", link: "privacy" }]
 
     return (
-        <footer>
+        <footer className="pt-10">
             <NavBar props={props} />
             <div className="flex justify-center py-5">
                 <a className="px-5">Twitter</a>

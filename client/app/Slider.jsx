@@ -7,11 +7,13 @@ export default function Slider(props) {
     const itemWidth = 350;
 
     const handlePrev = () => {
-        setPosition(position - itemWidth)
+        if (position === 0) return null
+        setPosition(position + itemWidth)
     }
 
     const handleNext = () => {
-        setPosition(position + itemWidth)
+        if (position === -(itemWidth * (data.length - 3))) return null
+        setPosition(position - itemWidth)
     }
 
     return (
@@ -23,7 +25,7 @@ export default function Slider(props) {
                 style={{ transform: `translateX(${position}px)` }}>
                 {data.map(el => {
                     return (
-                        <li>
+                        <li key={el}>
                             {<Card displayOn={props} />}
                         </li>
                     )
