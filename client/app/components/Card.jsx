@@ -22,7 +22,7 @@ export default function Card(props) {
                         </div>
                     </div>
                     {
-                        !props.displayOn ? <h1 className="flex justify-center pt-10 text text-lg">Martes 16:30 ARG</h1> : null
+                        !props.displayOn ? <h1 className="flex justify-center pt-9 -mb-5 text text-lg ">Martes 16:30 ARG</h1> : null
                     }
                 </div>
             </Link>

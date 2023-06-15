@@ -1,7 +1,6 @@
 import Image from 'next/image'
-import Cards from './Cards'
-import Title from './Title'
-import Slider from './Slider'
+import Title from './components/Title'
+import Slider from './components/Slider'
 
 export default function Home() {
   return (
@@ -12,10 +11,10 @@ export default function Home() {
           <Slider displayOn={true} />
           <br />
           <Title text="Hoy" />
-          <Cards />
+          <Slider />
           <br />
           <Title text="Mañana" />
-          <Cards />
+          <Slider />
           <br />
         </div>
       </div>

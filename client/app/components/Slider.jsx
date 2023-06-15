@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
-import Card from "./Card";
+import Card from "./Card"
 
 export default function Slider(props) {
+    console.log(props)
     const [position, setPosition] = useState(0);
     const itemWidth = 350;
 
@@ -26,7 +27,7 @@ export default function Slider(props) {
                 {data.map(el => {
                     return (
                         <li key={el}>
-                            {<Card displayOn={props} />}
+                            {<Card displayOn={props.displayOn} />}
                         </li>
                     )
                 })}

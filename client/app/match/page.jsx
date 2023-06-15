@@ -1,77 +1,73 @@
-import RootLayout from "../layout"
-
 export default function Match(props) {
     return (
-        <RootLayout>
-            <container>
-                <section className="flex flex-col items-center">
-                    <h1 className="my-5 text text-2xl">{data.local.name} - {data.visitor.name}</h1>
-                    <h1>{data.date}</h1>
-                    <div className="flex justify-center mb-5">
-                        <img src={data.local.badge} width="100px" className="mx-40" />
-                        <h1 className="text-2xl mt-10">{data.result}</h1>
-                        <img src={data.visitor.badge} width="100px" className="mx-40" />
-                    </div>
+        <container>
+            <section className="flex flex-col items-center">
+                <h1 className="my-5 text text-2xl">{data.local.name} - {data.visitor.name}</h1>
+                <h1>{data.date}</h1>
+                <div className="flex justify-center mb-5">
+                    <img src={data.local.badge} width="100px" className="mx-40" />
+                    <h1 className="text-2xl mt-10">{data.result}</h1>
+                    <img src={data.visitor.badge} width="100px" className="mx-40" />
+                </div>
 
-                    <section className="space-x-reverse">
-                        <div className="block justify-around">
-                            <div className="-ml-40 mx-40">
-                                {data.goals.local.map(el => {
-                                    return (
-                                        <p key={el.player}>{`${el.player} (${el.time})`}</p>
-                                    )
-                                })}
-                            </div>
-                            <div className="-mr-40 mx-40">
-                                {data.goals.visitor.map(el => {
-                                    return (
-                                        <p>{`${el.player} ${el.time}`}</p>
-                                    )
-                                })}
-                            </div>
+                <section className="space-x-reverse">
+                    <div className="block justify-around">
+                        <div className="-ml-40 mx-40">
+                            {data.goals.local.map(el => {
+                                return (
+                                    <p key={el.player}>{`${el.player} (${el.time})`}</p>
+                                )
+                            })}
                         </div>
-                    </section>
+                        <div className="-mr-40 mx-40">
+                            {data.goals.visitor.map(el => {
+                                return (
+                                    <p>{`${el.player} ${el.time}`}</p>
+                                )
+                            })}
+                        </div>
+                    </div>
                 </section>
+            </section>
 
-                <section id="slide" className="flex flex-row justify-around">
-                    <h1 className="my-5 hover:underline hover:decoration-green-500 hover:decoration-4">
-                        Estadisticas</h1>
-                    <h1 className="my-5 hover:underline hover:decoration-green-500 hover:decoration-4 ">
-                        Formaciones</h1>
-                    <h1 className="my-5 hover:underline hover:decoration-green-500 hover:decoration-4">
-                        Cronologia </h1>
-                </section>
+            <section id="slide" className="flex flex-row justify-around">
+                <h1 className="my-5 hover:underline hover:decoration-green-500 hover:decoration-4">
+                    Estadisticas</h1>
+                <h1 className="my-5 hover:underline hover:decoration-green-500 hover:decoration-4 ">
+                    Formaciones</h1>
+                <h1 className="my-5 hover:underline hover:decoration-green-500 hover:decoration-4">
+                    Cronologia </h1>
+            </section>
 
-                <section key="stats" className="flex flex-row justify-around">
-                    <section>
-                        {
-                            Object.entries(data.stats.local).map(([key, value]) => (
-                                <p key={key}>{value}</p>
-                            ))
-                        }
-                    </section>
-                    <section className="text text-center">
-                        <p>Remates</p>
-                        <p>Al arco</p>
-                        <p>Tiros de esquina</p>
-                        <p>Posesión</p>
-                        <p>Pases</p>
-                        <p>Precisión</p>
-                        <p>Faltas</p>
-                        <p>Tarjetas amarillas</p>
-                        <p>Tarjetas rojas</p>
-                        <p>Offside</p>
-                    </section>
-                    <section>
-                        {
-                            Object.entries(data.stats.visitor).map(([key, value]) => (
-                                <p key={key}>{value}</p>
-                            ))
-                        }
-                    </section>
+            <section key="stats" className="flex flex-row justify-around">
+                <section>
+                    {
+                        Object.entries(data.stats.local).map(([key, value]) => (
+                            <p key={key}>{value}</p>
+                        ))
+                    }
                 </section>
-            </container>
-        </RootLayout>
+                <section className="text text-center">
+                    <p>Remates</p>
+                    <p>Al arco</p>
+                    <p>Tiros de esquina</p>
+                    <p>Posesión</p>
+                    <p>Pases</p>
+                    <p>Precisión</p>
+                    <p>Faltas</p>
+                    <p>Tarjetas amarillas</p>
+                    <p>Tarjetas rojas</p>
+                    <p>Offside</p>
+                </section>
+                <section>
+                    {
+                        Object.entries(data.stats.visitor).map(([key, value]) => (
+                            <p key={key}>{value}</p>
+                        ))
+                    }
+                </section>
+            </section>
+        </container>
     )
 }
 
