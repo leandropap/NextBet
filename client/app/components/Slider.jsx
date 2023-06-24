@@ -3,7 +3,6 @@ import { useState } from "react";
 import Card from "./Card"
 
 export default function Slider(props) {
-    console.log(props)
     const [position, setPosition] = useState(0);
     const itemWidth = 350;
 
