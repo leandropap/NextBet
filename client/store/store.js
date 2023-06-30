@@ -1,22 +1,29 @@
-import create from "zustand"
+import { create } from "zustand"
+import { immer } from "zustand/middleware/immer"
+import { createMatchSlice } from "./slices/matchSlice"
 
-const useStore = create((set) => {
 
-})
+export const useStore = create((...a) => ({
+    ...createMatchSlice(...a)
+}))
 
 export default useStore
 
 // if (typeof window !== "undefined") {
-//     const connnection = window.__REDUX_DEVTOOLS_EXTENSION__?.connnect({
-//         name: "name Field"
+//     const connection = window.__REDUX_DEVTOOLS_EXTENSION__?.connect({
+//         name: 'name Field'
 //     })
 
-//     connnection?.init(useStore.getState())
+//     connection?.init(useStore, getState())
 //     useStore.subscribe((newState) => {
 //         connection?.send("State", newState)
 //     })
 // }
 
-// if (process.env.NODE_ENV === "development") {
-//     mountStoreDevtool("Store", useStore)
-// }
+
+/*
+Partidos, 
+Ligas,
+Jugadores,
+Equipos,
+*/

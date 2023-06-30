@@ -1,8 +1,19 @@
-import Image from 'next/image'
+"use client"
 import Title from './components/Title'
 import Slider from './components/Slider'
+import useStore from '@/store/store'
+import { useEffect } from 'react'
 
 export default function Home() {
+  const matches = useStore(state => state.matches)
+  const getMatches = useStore(state => state.getMatches)
+
+  useEffect(() => {
+    getMatches()
+  }, [])
+
+  console.log(matches)
+
   return (
     <main>
       <div className="flex flex-row my-5">
