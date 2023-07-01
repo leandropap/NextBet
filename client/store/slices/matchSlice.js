@@ -1,10 +1,10 @@
 import axios from "axios"
-const apiKey = 'cbd421557cmsh8c60cd002921087p155c09jsn89c71f46c142'
-const hoy = Date.now()
-console.log(hoy)
+const apiUrl = process.env.NEXT_PUBLIC_API_URL
+const apiKey = process.env.NEXT_PUBLIC_API_KEY
+console.log(apiKey, apiUrl)
 
 const api = axios.create({
-    baseURL: `https://api-football-v1.p.rapidapi.com/v3/fixtures`,
+    apiUrl,
     params: { date: '2023-06-29' },
     headers: {
         'X-RapidAPI-Key': apiKey,
@@ -12,11 +12,11 @@ const api = axios.create({
     }
 })
 
-export const createMatchSlice = ((set, get) => ({
+export const matchSlice = ((set, get) => ({
     matches: [],
     getMatches: async () => {
         try {
-            const response = await api.get(api.baseURL)
+            const response = await api.get(apiUrl)
             set({ matches: response.data.response })
             console.log(response.data.response)
         } catch (e) {

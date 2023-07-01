@@ -1,10 +1,10 @@
 import { create } from "zustand"
 import { immer } from "zustand/middleware/immer"
-import { createMatchSlice } from "./slices/matchSlice"
+import { matchSlice } from "./slices/matchSlice"
 
 
 export const useStore = create((...a) => ({
-    ...createMatchSlice(...a)
+    ...matchSlice(...a)
 }))
 
 export default useStore
