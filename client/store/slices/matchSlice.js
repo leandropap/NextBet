@@ -1,7 +1,6 @@
 import axios from "axios"
 const apiUrl = process.env.NEXT_PUBLIC_API_URL
 const apiKey = process.env.NEXT_PUBLIC_API_KEY
-console.log(apiKey, apiUrl)
 
 const api = axios.create({
     apiUrl,
@@ -13,12 +12,19 @@ const api = axios.create({
 })
 
 export const matchSlice = ((set, get) => ({
-    matches: [],
+    allMatches: [],
+    last: [],
+    today: [],
+    tomorrow: [],
     getMatches: async () => {
         try {
-            const response = await api.get(apiUrl)
-            set({ matches: response.data.response })
-            console.log(response.data.response)
+            const res = await api.get(apiUrl)
+            set({
+                allMatches: res.data.response,
+                last: res.data.response.slice(0, 5),
+                today: res.data.response.slice(5, 10),
+                tomorrow: res.data.response.slice(10, 15),
+            })
         } catch (e) {
             console.log(e)
         }

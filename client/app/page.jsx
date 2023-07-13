@@ -1,33 +1,38 @@
 "use client"
 
-import Image from 'next/image'
+import { useEffect } from 'react'
+import useStore from '@/store/store'
+import { shallow } from 'zustand/shallow'
 import Title from './components/Title'
 import Slider from './components/Slider'
-import useStore from '@/store/store'
-import { useEffect } from 'react'
 
 export default function Home() {
-  const matches = useStore(state => state.matches)
   const getMatches = useStore(state => state.getMatches)
+  const { allMatches, last, today, tomorrow } = useStore(state => ({
+    allMatches: state.allMatches,
+    last: state.last,
+    today: state.today,
+    tomorrow: state.tomorrow
+  }))
 
   useEffect(() => {
     getMatches()
   }, [])
 
-  console.log(matches)
+  console.log(last, today, tomorrow)
 
   return (
     <main>
       <div className="flex flex-row my-5">
         <div className="flex flex-col">
           <Title text="Ultimos partidos" />
-          <Slider displayOn={true} />
+          <Slider displayOn={true} matches={last} />
           <br />
           <Title text="Hoy" />
-          <Slider />
+          <Slider matches={today} />
           <br />
           <Title text="Mañana" />
-          <Slider />
+          <Slider matches={tomorrow} />
           <br />
         </div>
       </div>
